@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muskan's Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* Header */
+    header {
+      background: #222;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 5px #f39c12,
+                   0 0 25px #f39c12,
+                   0 0 5px #f39c12;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #f39c12;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+    }
+
+    h2 {
+      border-bottom: 2px solid #f39c12;
+      display: inline-block;
+      margin-bottom: 20px;
+      padding-bottom: 5px;
+    }
+
+    /* Skills */
+    .skills span {
+      background: #f39c12;
+      color: white;
+      padding: 8px 12px;
+      margin: 5px;
+      border-radius: 5px;
+      display: inline-block;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .skills span:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    /* Projects */
+    .projects div {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .projects div:hover {
+      transform: perspective(600px) rotateY(8deg) rotateX(8deg) scale(1.05);
+      box-shadow: 0px 15px 25px rgba(0,0,0,0.3);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 15px;
+      background: #f39c12;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      box-shadow: 0 5px #d35400;
+      transition: all 0.2s ease;
+    }
+
+    .btn:active {
+      box-shadow: 0 2px #d35400;
+      transform: translateY(3px);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      background: #222;
+      color: white;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Muskan's Portfolio</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Hi! I'm <b>Muskan</b>, a Computer Science student who loves coding and exploring new technologies.  
+      I am passionate about <b>web development</b> and <b>data analytics</b>, and I enjoy creating projects that solve real-life problems.  
+    </p>
+    <a href="resume.pdf" class="btn" download>Download Resume</a>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>Python</span>
+      <span>Data Analysis</span>
+      <span>Machine Learning</span>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div>
+        <h3>1. Portfolio Website</h3>
+        <p>A personal portfolio created using HTML, CSS, and JavaScript.</p>
+      </div>
+      <div>
+        <h3>2. To-Do List App</h3>
+        <p>A simple task management app where users can add and delete tasks.</p>
+      </div>
+      <div>
+        <h3>3. Weather App</h3>
+        <p>A web app that shows weather details using a public API.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:muskan@example.com">muskan@example.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/muskan" target="_blank">linkedin.com/in/muskan</a></p>
+    <p>GitHub: <a href="https://github.com/muskan" target="_blank">github.com/muskan</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Muskan | All Rights Reserved</p>
+  </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const sections = document.querySelectorAll("section");
+
+    window.addEventListener("scroll", () => {
+      sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 200;
+        let height = sec.offsetHeight;
+
+        if (top >= offset && top < offset + height) {
+          sec.style.opacity = "1";
+          sec.style.transform = "translateY(0)";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
